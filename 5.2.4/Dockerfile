@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster as base
+FROM python:3.8-slim-buster as base
 FROM base as builder
 
 ENV PLONE_VERSION=5.2.4
