@@ -30,3 +30,11 @@ help: ## This help message
 .PHONY: build-image
 build-image:  ## Build Docker Image
 	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile
+
+.PHONY: push-image
+push-image:  ## Push docker image to dockerhub
+	@docker push $(IMAGE_NAME):$(IMAGE_TAG)
+
+.PHONY: release
+release: build-image push-image ## Build and push the image to docker hub
+	@echo "Releasing $(IMAGE_NAME):$(IMAGE_TAG)"
