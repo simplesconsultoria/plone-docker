@@ -10,7 +10,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps\
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip wheel Plone Paste -c https://dist.plone.org/release/$PLONE_VERSION/constraints.txt --wheel-dir=/wheelhouse
+RUN pip install "pip==19.2.3" && \
+    pip wheel Plone Paste -c https://dist.plone.org/release/$PLONE_VERSION/constraints.txt --wheel-dir=/wheelhouse
 
 FROM base
 
