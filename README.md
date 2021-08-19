@@ -5,13 +5,17 @@
 
 ## Features
 
-- Images for Plone 5.2.4.
+- Images for Plone: 5.2.4, 5.2.5
+- Images for ZEO server: 5.2.2
 - Installed with pip, not unified installer.
 
 
 ### Supported tags and respective `Dockerfile` links
 
-- [`5.2.4`, `latest` (*5.2.4/Dockerfile*)](https://github.com/simplesconsultoria/docker-plone/blob/main/5.2.4/Dockerfile)
+#### Plone
+- [`5.2.5`, `latest` (*5.2.4/Dockerfile*)](https://github.com/simplesconsultoria/docker-plone/blob/main/5.2.4/Dockerfile)
+
+- [`5.2.4`, (*5.2.4/Dockerfile*)](https://github.com/simplesconsultoria/docker-plone/blob/main/5.2.4/Dockerfile)
 
 
 ## Prerequisites
@@ -28,7 +32,7 @@ Plone standalone instances are best suited for testing Plone and development.
 Download and start the latest Plone 5 container, based on [Debian](https://www.debian.org/).
 
 ```console
-docker run -p 8080:8080 simplesconsultoria/plone:5.2.4
+docker run -p 8080:8080 simplesconsultoria/plone:latest
 ```
 
 This image includes `EXPOSE 8080` (the Plone port), so standard container linking will make it automatically available to the linked containers. Now you can add a Plone Site at http://localhost:8080 - default Zope user and password are **`admin/admin`**.
@@ -38,7 +42,7 @@ This image includes `EXPOSE 8080` (the Plone port), so standard container linkin
 In a folder, create a Dockerfile, i.e.:
 
 ```
-FROM simplesconsultoria/plone:5.2.4
+FROM simplesconsultoria/plone:latest
 
 COPY requirements.txt requirements.txt
 RUN ./bin/pip install -r requirements.txt
