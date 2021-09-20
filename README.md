@@ -17,6 +17,8 @@
 
 - [`5.2.4`, (*5.2.4/Dockerfile*)](https://github.com/simplesconsultoria/docker-plone/blob/main/5.2.4/Dockerfile)
 
+- [`6.0-dev`, (*6.0-dev/Dockerfile*)](https://github.com/simplesconsultoria/docker-plone/blob/main/6.0-dev/Dockerfile)
+
 
 ## Prerequisites
 
